@@ -1,0 +1,10 @@
+#love:focus{
+  border: none;
+}
+#love:hover{
+  background-color: #fff;
+  color: pink;
+}
+#delete:hover{
+  color: red;
+}

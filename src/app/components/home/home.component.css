@@ -1,0 +1,11 @@
+.profile{
+  background-color: rgb(0, 79, 237);
+  border-radius: 38% 38% 17% 16% / 38% 37% 63% 62%;
+  width: fit-content;
+  height: fit-content;
+  transition: transform 0.5s;
+}
+.profile:hover{
+  transform: scale(0.9);
+  transition: transform 0.5s;
+}

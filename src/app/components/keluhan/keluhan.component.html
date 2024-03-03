@@ -1,0 +1,60 @@
+<div class="container float-sm-start">
+  <h1 class="text-center mb-3">Saran</h1>
+  <div class="d-flex justify-content-end mb-3"><button type="button" class="btn btn-outline-primary justify-content-end"
+      data-bs-toggle="modal" data-bs-target="#addKeluh">Tambahkan Saran</button></div>
+  <div class="modal fade" id="addKeluh" tabindex="-1" aria-labelledby="addKeluhLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addKeluhLabel">Keluh Kesah Anda</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form (ngSubmit)="addData()">
+            <div class="mb-3">
+              <label for="name" class="form-label">Nama</label>
+              <input type="text" class="form-control" name="name" placeholder="Masukkan Nama Anda..."
+                [(ngModel)]="form.name">
+            </div>
+            <div class="mb-3">
+              <label for="keluhKesah" class="form-label">Keluh Kesah</label>
+              <textarea class="form-control" name="keluhKesah" placeholder="Masukkan Keluhan Anda..." rows="3"
+                [(ngModel)]="form.keluhan"></textarea>
+            </div>
+            <button class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <table class="table table-bordered mx-auto">
+    <thead class="bg-primary text-white">
+      <tr>
+        <th class="text-center" *ngFor="let col of columnTable">{{col}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of dataKeluhan | paginate: { itemsPerPage: 5, currentPage: page, totalItems:totalLength };">
+        <td>{{data.name}}</td>
+        <td>{{data.keluhan}}</td>
+        <td class="d-flex">
+          <!-- <button id="love" class="btn btn m-1 w-100" (click)="addLike(data.like)">
+            <i class="bi bi-heart"></i>
+            <p class="m-0">{{data.like}}</p>
+          </button> -->
+          <button id="delete" class="btn btn m-1" (click)="deleteData(data.id)">
+            <i class="bi bi-trash3-fill"></i>
+            <p class="m-0">Delete</p>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center">
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+  </div>
+  <hr>
+
+
+</div>
