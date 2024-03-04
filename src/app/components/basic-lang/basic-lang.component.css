@@ -20,7 +20,7 @@ img:hover{
 }
 
 .slider {
-  background: white;
+  background: transparent;
   /* box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125); */
   height: 100px;
   margin: auto;

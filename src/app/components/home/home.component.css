@@ -9,3 +9,16 @@
   transform: scale(0.9);
   transition: transform 0.5s;
 }
+
+.btn{
+  background-color: #9DB2BF;
+}
+
+.btn:hover{
+  background-color: #616f77;
+  color: #fff;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+  color: #fff;
+}
